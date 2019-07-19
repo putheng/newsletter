@@ -1,0 +1,3 @@
+import DummyImport from './DummyImport/routes'
+
+export default [...home ImportSpread]
