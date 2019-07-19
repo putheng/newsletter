@@ -11,5 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.scripts([
+    './resources/js/vendors/pace.min.js',
+    './resources/js/vendors/perfect-scrollbar.min.js',
+    './resources/js/vendors/stacked-menu.min.js',
+    './resources/js/vendors/theme.min.js',
+], 'public/js/plugin.js');
+
+
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');

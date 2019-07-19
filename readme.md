@@ -22,10 +22,10 @@ npm install
 ```
 
 ### Config default base path 
-Go to `js/bootstrap.js`
+Go to `js/config/index.js` to your api domain
 
 ```
-window.axios.defaults.baseURL = 'https://api.example.com';
+API_LOCATION: 'https://api.example.com';
 ```
 
 #### Artisan create menu group

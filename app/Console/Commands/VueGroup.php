@@ -6,7 +6,7 @@ use App\Console\Traits\Generatable;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
-class VueMake extends Command
+class VueGroup extends Command
 {
     use Generatable;
     /**

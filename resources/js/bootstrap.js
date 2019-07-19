@@ -1,4 +1,5 @@
 window._ = require('lodash');
+window.config = require('./config');
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -22,7 +23,7 @@ try {
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.baseURL = 'https://laravel.com/';
+window.axios.defaults.baseURL = config.API_LOCATION;
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that

@@ -62,9 +62,10 @@
                 margin-bottom: 30px;
             }
         </style>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height" id="app">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -81,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <home-page></home-page>
                 </div>
 
                 <div class="links">
@@ -96,4 +97,5 @@
             </div>
         </div>
     </body>
+    <script src="/js/app.js"></script>
 </html>

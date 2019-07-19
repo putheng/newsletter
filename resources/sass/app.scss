@@ -1,8 +1,16 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600');
 
-// Variables
-@import 'variables';
+// Font Iconic
+@import 'open-iconic/css/open-iconic-bootstrap.min.css';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Font Awesome
+@import 'fontawesome/css/all.min.css';
+
+// Theme
+@import 'theme.min.css';
+
+// Theme
+@import 'custom.css';
+
+

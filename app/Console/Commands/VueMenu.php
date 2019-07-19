@@ -6,7 +6,7 @@ use App\Console\Traits\Generatable;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
-class VueMakeSubMenu extends Command
+class VueMenu extends Command
 {
     use Generatable;
     /**
@@ -91,7 +91,7 @@ class VueMakeSubMenu extends Command
 
         File::append($indexjs, $export);
 
-        $routes = "{\n\t\tpath: '/{$cleanPath}',\n\t\tcomponent: {$id},\n\t\tname: '{$name}'\n\t},\n\t/**/";
+        $routes = "{\n\t\tpath: '/{$cleanPath}',\n\t\tcomponent: {$id},\n\t\tname: '{$main}-{$name}'\n\t},\n\t/**/";
 
         sleep(1);
 
