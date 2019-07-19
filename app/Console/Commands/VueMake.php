@@ -50,22 +50,33 @@ class VueMake extends Command
         }
 
         $stub = base_path() . '/resources/js/app/routes.js';
-        $dirs = ['components', 'routes', 'vuex'];
+        $vuex = base_path() . '/resources/js/vuex/index.js';
 
         File::copyDirectory($app_path.'/app/layout', $app_path.'/app/'. $import);
 
         $importContext = "import $import from './$import/routes'\n";
 
-        $spread = ",\n\t...$import\n]";
+        $spread = "...$import,\n\t/**/";
 
         $replace = $this->generateStub($stub, [
-            "\n]" => $spread,
+            "/**/" => $spread,
         ]);
 
         File::put($stub, $replace);
-
+        sleep(1);
         File::prepend($stub, $importContext);
 
-        return $this->info($importContext);
+        $importvuex = "/*import*/\nimport {$import} from '../app/{$import}/vuex'";
+        $exportvuex = "$import:$import,\n\t\t/*export*/";
+
+        $content = $this->generateStub($vuex, [
+            "/*import*/" => $importvuex,
+            "/*export*/" => $exportvuex,
+        ]);
+
+        sleep(1);
+        File::put($vuex, $content);
+
+        return $this->info('Generate success');
     }
 }
