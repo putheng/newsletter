@@ -52915,6 +52915,140 @@ var app = new Vue({
 
 /***/ }),
 
+/***/ "./resources/js/app/admin/components/index.js":
+/*!****************************************************!*\
+  !*** ./resources/js/app/admin/components/index.js ***!
+  \****************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+
+/**/
+
+/***/ }),
+
+/***/ "./resources/js/app/admin/routes/index.js":
+/*!************************************************!*\
+  !*** ./resources/js/app/admin/routes/index.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components */ "./resources/js/app/admin/components/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ([
+  /**/
+]);
+
+/***/ }),
+
+/***/ "./resources/js/app/admin/vuex/actions.js":
+/*!************************************************!*\
+  !*** ./resources/js/app/admin/vuex/actions.js ***!
+  \************************************************/
+/*! exports provided: fetchUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/**/
+
+var fetchUser = function fetchUser(_ref) {
+  var commit = _ref.commit;
+  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/admin/user').then(function (response) {
+    commit('setProducts', response.data.data);
+    return Promise.resolve(response);
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/app/admin/vuex/getters.js":
+/*!************************************************!*\
+  !*** ./resources/js/app/admin/vuex/getters.js ***!
+  \************************************************/
+/*! exports provided: getProducts */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getProducts", function() { return getProducts; });
+var getProducts = function getProducts(state) {
+  return state.getProducts;
+};
+
+/***/ }),
+
+/***/ "./resources/js/app/admin/vuex/index.js":
+/*!**********************************************!*\
+  !*** ./resources/js/app/admin/vuex/index.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ "./resources/js/app/admin/vuex/state.js");
+/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mutations */ "./resources/js/app/admin/vuex/mutations.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions */ "./resources/js/app/admin/vuex/actions.js");
+/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getters */ "./resources/js/app/admin/vuex/getters.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _state__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_1__,
+  actions: _actions__WEBPACK_IMPORTED_MODULE_2__,
+  getters: _getters__WEBPACK_IMPORTED_MODULE_3__
+});
+
+/***/ }),
+
+/***/ "./resources/js/app/admin/vuex/mutations.js":
+/*!**************************************************!*\
+  !*** ./resources/js/app/admin/vuex/mutations.js ***!
+  \**************************************************/
+/*! exports provided: setProducts */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setProducts", function() { return setProducts; });
+var setProducts = function setProducts(state, data) {
+  state.products = data;
+};
+
+/***/ }),
+
+/***/ "./resources/js/app/admin/vuex/state.js":
+/*!**********************************************!*\
+  !*** ./resources/js/app/admin/vuex/state.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  products: products
+  /**/
+
+});
+
+/***/ }),
+
 /***/ "./resources/js/app/index.js":
 /*!***********************************!*\
   !*** ./resources/js/app/index.js ***!
@@ -52940,9 +53074,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ([
-  /**/
-]);
+/* harmony import */ var _admin_routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin/routes */ "./resources/js/app/admin/routes/index.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_toConsumableArray(_admin_routes__WEBPACK_IMPORTED_MODULE_0__["default"]));
 
 /***/ }),
 
@@ -52975,6 +53117,7 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.baseURL = 'https://laravel.com/';
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -53093,7 +53236,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************!*\
   !*** ./resources/js/components/index.js ***!
   \******************************************/
-/*! no static exports found */
+/*! exports provided: Home */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53325,6 +53468,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions */ "./resources/js/vuex/actions.js");
 /* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mutations */ "./resources/js/vuex/mutations.js");
 /* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./getters */ "./resources/js/vuex/getters.js");
+/* harmony import */ var _app_admin_vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../app/admin/vuex */ "./resources/js/app/admin/vuex/index.js");
 
 
 
@@ -53333,6 +53477,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /*import*/
 
+
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: _state__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -53340,7 +53485,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
   mutations: _mutations__WEBPACK_IMPORTED_MODULE_4__,
   getters: _getters__WEBPACK_IMPORTED_MODULE_5__,
   modules: {
+    admin: _app_admin_vuex__WEBPACK_IMPORTED_MODULE_6__["default"]
     /*export*/
+
   }
 }));
 

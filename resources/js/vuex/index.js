@@ -16,6 +16,6 @@ export default new Vuex.Store({
 	mutations,
 	getters,
     modules: {
-    	/*export*/
+		/*export*/
     }
 })

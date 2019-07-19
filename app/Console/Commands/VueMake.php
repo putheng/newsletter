@@ -14,14 +14,14 @@ class VueMake extends Command
      *
      * @var string
      */
-    protected $signature = 'vue:menu {menu}';
+    protected $signature = 'vue:group {menu}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Make a new vue menu item';
+    protected $description = 'Make a new vue menu group';
 
     /**
      * Create a new command instance.

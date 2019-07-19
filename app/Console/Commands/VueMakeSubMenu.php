@@ -14,14 +14,14 @@ class VueMakeSubMenu extends Command
      *
      * @var string
      */
-    protected $signature = 'vue:submenu {menu}';
+    protected $signature = 'vue:menu {menu}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Make a new vue sub menu item';
+    protected $description = 'Make a new vue menu item';
 
     /**
      * Create a new command instance.

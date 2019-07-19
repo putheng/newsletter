@@ -1,0 +1,3 @@
+export const DummyValue = (state) => {
+    return state.DummyValue
+}

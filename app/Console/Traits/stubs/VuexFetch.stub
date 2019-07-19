@@ -1,0 +1,7 @@
+export const fetchDummy = ({commit}) => {
+	return axios.get('DummyEndPoint').then((response) => {
+		commit('DummyState', response.data.data)
+
+		return Promise.resolve(response)
+	})
+}
