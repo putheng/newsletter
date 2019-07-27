@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Putheng\Role\RoleServiceProvider::class,
         /*
          * Application Service Providers...
          */

@@ -9,7 +9,11 @@
 	<main class="app-main">
 		<!-- .wrapper -->
 		<div class="wrapper">
-			content
+			<div class="page">
+				<div class="page-inner">
+					<router-view></router-view>
+				</div>
+			</div>
 		</div>
 		<!-- footer.html -->
 		<!-- /.wrapper -->

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94d4bf9ac7f4a933030e46a346ee2917",
+    "content-hash": "86328e76f541d3c200f4841e0506fc12",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1328,6 +1328,45 @@
                 "shell"
             ],
             "time": "2018-10-13T15:16:03+00:00"
+        },
+        {
+            "name": "putheng/role",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/putheng/role.git",
+                "reference": "461fa457c5dc28938b9b85fac07ac2a9d1bcb647"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putheng/role/zipball/461fa457c5dc28938b9b85fac07ac2a9d1bcb647",
+                "reference": "461fa457c5dc28938b9b85fac07ac2a9d1bcb647",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">= 5.0",
+                "illuminate/support": ">= 5.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.7",
+                "phpunit/phpunit": "~7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Putheng\\Role\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Putheng",
+                    "email": "puthengemail@gmail.com"
+                }
+            ],
+            "description": "A role and permission package for Laravel",
+            "time": "2019-01-30T07:10:26+00:00"
         },
         {
             "name": "ramsey/uuid",

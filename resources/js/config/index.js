@@ -1,3 +1,3 @@
 module.exports = {
-    API_LOCATION: 'https://api.example.com'
+    API_LOCATION: 'http://laravelbuild.io'
 }
