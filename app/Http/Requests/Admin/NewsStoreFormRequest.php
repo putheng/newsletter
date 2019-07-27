@@ -23,10 +23,8 @@ class NewsStoreFormRequest extends FormRequest
      */
     public function rules()
     {
-        $id = $this->route('news');
-
         return [
-            'title' => "required|max:255|min:5|unique:news,title,'{$id}',id,deleted_at,NULL",
+            'title' => "required|max:255|min:5|unique:news",
             'description' => 'required|max:1000|min:10',
             'image' => 'required|image'
         ];

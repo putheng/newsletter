@@ -22,7 +22,7 @@ class NewsController extends Controller
 
     public function destroy(Request $request)
     {
-        News::find($request->id)->delete();
+        News::where('id', $request->id)->delete();
 
         return NewsResource::collection(
             News::latest()->get()

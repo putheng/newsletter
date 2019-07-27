@@ -5,12 +5,9 @@ namespace App\Models;
 use App\Models\Image;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class News extends Model
 {
-    use SoftDeletes;
-
     public function getRouteKeyName()
     {
         return 'slug';
