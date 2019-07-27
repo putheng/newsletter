@@ -66,7 +66,7 @@
 				axios.post('/api/admin/news/create', form).then((response) => {
 					this.$store.commit('admin/setNews', response.data.data)
 
-					this.$router.replace('/admin/news/view')
+					this.$router.replace('/admin')
 				}).catch((error) => {
 					
 				})
