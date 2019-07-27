@@ -1,3 +1,3 @@
 module.exports = {
-    API_LOCATION: 'http://laravelbuild.io'
+    API_LOCATION: 'https://newsletter-putheng.herokuapp.com'
 }
