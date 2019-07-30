@@ -46,6 +46,25 @@ class NewsController extends Controller
         );
     }
 
+    public function storeImage(NewsStoreFormRequest $request)
+    {
+        dd($request->all());
+
+        $image = $this->storeFileUpload($request->file('image'));
+
+        $news = new News;
+        $news->title = $request->title;
+        $news->description = $request->description;
+        $news->user()->associate($request->user());
+        $news->image()->associate($image);
+
+        $news->save();
+
+        return NewsResource::collection(
+            News::latest()->get()
+        );
+    }
+
     public function storeFileUpload(UploadedFile $uploadFile)
     {
     	$fileName = $uploadFile->getClientOriginalName();
