@@ -12,9 +12,6 @@ Route::group(['middleware' => 'role:admin'], function () {
 
 });
 
-Route::get('/api/news', 'NewsController@index');
-Route::get('/api/news/{news}', 'NewsController@show');
-
 Route::get('/', 'HomeController@index');
 Route::get('/news/{news}', 'HomeController@show')->name('news.show');
 

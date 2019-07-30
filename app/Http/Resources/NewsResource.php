@@ -20,7 +20,7 @@ class NewsResource extends JsonResource
             'description' => $this->description,
             'image' => $this->image->url,
             'slug' => $this->slug,
-            'url' => asset('api/news/'. $this->slug),
+            'url' => asset('api/v2/news/'. $this->slug),
             'created_at' => $this->created_at->diffForHumans()
         ];
     }
