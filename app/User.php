@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Putheng\Role\Traits\HasPermissionsTrait;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use App\Models\News;
+
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -47,5 +49,10 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function news()
+    {
+        return $this->hasMany(News::class);
     }
 }

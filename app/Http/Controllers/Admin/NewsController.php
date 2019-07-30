@@ -16,7 +16,7 @@ class NewsController extends Controller
 	public function show(Request $request)
 	{
 		return NewsResource::collection(
-			News::latest()->get()
+			$request->user()->news()->latest()->get()
 		);
 	}
 
