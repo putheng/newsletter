@@ -26,7 +26,7 @@ class NewsStoreFormRequest extends FormRequest
         return [
             'title' => "required|max:255|min:5|unique:news",
             'description' => 'required|max:1000|min:10',
-            'image' => 'required|image'
+            'image' => 'required'
         ];
     }
 

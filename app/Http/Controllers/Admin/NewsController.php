@@ -16,7 +16,7 @@ class NewsController extends Controller
 	public function show(Request $request)
 	{
 		return NewsResource::collection(
-			$request->user()->news()->latest()->get()
+			News::latest()->get()
 		);
 	}
 
@@ -48,8 +48,6 @@ class NewsController extends Controller
 
     public function storeImage(NewsStoreFormRequest $request)
     {
-        dd($request->all());
-
         $image = $this->storeImageUpload($request->base64, $request->image);
 
         $news = new News;

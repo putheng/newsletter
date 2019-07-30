@@ -9,7 +9,7 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'v2'], function(){
 		Route::get('news/my', 'AdminController@news');
 
 		Route::post('news/delete', 'Admin\NewsController@destroy');
-		Route::get('news/create', 'Admin\NewsController@storeImage');
+		Route::post('news/create', 'Admin\NewsController@storeImage');
 
 	});
 });
