@@ -70,7 +70,7 @@ class NewsController extends Controller
         $filePath = $this->buildDirPath() . str_slug(uniqid(true) .'-'. $fileName).'.jpg';
 
         Storage::disk('asset')->put($filePath,
-            base64_decode($uploadFile);
+            base64_decode($uploadFile)
         );
 
         $file = new Image;
