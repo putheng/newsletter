@@ -50,7 +50,7 @@ class NewsController extends Controller
     {
         dd($request->all());
 
-        $image = $this->storeFileUpload($request->file('image'));
+        $image = $this->storeImageUpload($request->base64, $request->image);
 
         $news = new News;
         $news->title = $request->title;
@@ -63,6 +63,25 @@ class NewsController extends Controller
         return NewsResource::collection(
             News::latest()->get()
         );
+    }
+
+    public function storeImageUpload($uploadFile, $fileName)
+    {
+        $filePath = $this->buildDirPath() . str_slug(uniqid(true) .'-'. $fileName).'.jpg';
+
+        Storage::disk('asset')->put($filePath,
+            base64_decode($uploadFile);
+        );
+
+        $file = new Image;
+
+        $file->name = $fileName;
+        $file->path = $filePath;
+        $file->user()->associate(auth()->user());
+
+        $file->save();
+
+        return $file;
     }
 
     public function storeFileUpload(UploadedFile $uploadFile)

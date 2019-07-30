@@ -14,6 +14,5 @@ Route::group(['middleware' => 'role:admin'], function () {
 
 Route::get('/', 'HomeController@index');
 Route::get('/news/{news}', 'HomeController@show')->name('news.show');
-Route::post('/api/v1/news/create', 'Admin\NewsController@storeImage');
 
 Auth::routes();
