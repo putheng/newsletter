@@ -66,7 +66,7 @@ class NewsController extends Controller
         $news->save();
 
         return response()->json([
-            'statue' => true
+            'status' => true
         ], 200);
     }
 

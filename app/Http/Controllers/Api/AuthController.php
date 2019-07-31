@@ -17,7 +17,10 @@ class AuthController extends Controller
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        return $this->respondWithToken($token);
+        return response()->json([
+            'access_token' => $token,
+            'username' => auth('api')->user()->name,
+        ]);
     }
 
     public function register(Request $request)
@@ -42,7 +45,10 @@ class AuthController extends Controller
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        return $this->respondWithToken($token);
+        return response()->json([
+            'access_token' => $token,
+            'username' => $user->name,
+        ]);
     }
 
     protected function respondWithToken($token)
