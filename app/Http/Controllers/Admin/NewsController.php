@@ -13,12 +13,19 @@ use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
-	public function show(Request $request)
+	public function my(Request $request)
 	{
 		return NewsResource::collection(
-			News::latest()->get()
+			$request->user()->news()->latest()->get()
 		);
 	}
+
+    public function show(Request $request)
+    {
+        return NewsResource::collection(
+            News::latest()->get()
+        );
+    }
 
     public function destroy(Request $request)
     {

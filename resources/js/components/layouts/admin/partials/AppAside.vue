@@ -49,6 +49,10 @@
 								<span class="menu-icon oi oi-list-rich"></span>
 								<span class="menu-text">Create News</span>
 							</router-link>
+							<router-link class="menu-link" :to="{ name: 'admin-my'}">
+								<span class="menu-icon oi oi-list-rich"></span>
+								<span class="menu-text">My News</span>
+							</router-link>
 						</li>
 					</ul>
 					<!-- /.menu -->

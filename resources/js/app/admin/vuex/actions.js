@@ -15,3 +15,11 @@ export const fetchNews = ({commit}) => {
 		return Promise.resolve(response)
 	})
 }
+
+export const fetchMyNews = ({commit}) => {
+	return axios.get('/api/admin/news/my').then((response) => {
+		commit('setNews', response.data.data)
+
+		return Promise.resolve(response)
+	})
+}

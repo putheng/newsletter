@@ -8,6 +8,7 @@
 				<th>Title</th>
 				<th>Image</th>
 				<th>Created</th>
+				<th></th>
 			</thead>
 			<tbody>
 				<template  v-if="news.length">
@@ -20,6 +21,21 @@
 							<img :src="item.image" width="100">
 						</td>
 						<td>{{ item.created_at }}</td>
+						<td>
+							<a href="#" class="btn btn-sm btn-icon btn-secondary"
+								data-toggle="modal"
+							:data-target="'#'+ convertToID(item.id)">
+							<i class="far fa-trash-alt"></i>
+							<span class="sr-only">Remove</span>
+						</a>
+						<app-modal 
+							commit="admin/setNews"
+							:data="{id:item.id}"
+							:option="{ title: 'Delete', url: '/api/admin/news/delete'}"
+							cancel="Close" :id="convertToID(item.id)" title="Delete news ?" >
+							<h6>{{ item.title }}</h6>
+						</app-modal>
+						</td>
 					</tr>
 				</template>
 				<template v-else>
@@ -44,7 +60,7 @@
 	export default {
 		methods: {
 			...mapActions({
-				fetch: 'admin/fetchNews'
+				fetch: 'admin/fetchMyNews'
 			}),
 			convertToID(text){
 			    return 'ab'+ text + 'ab'
