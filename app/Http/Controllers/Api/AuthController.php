@@ -34,6 +34,8 @@ class AuthController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
+        $user->giveRoleTo('admin');
+        
         $credentials = request(['email', 'password']);
 
         if (! $token = auth('api')->attempt($credentials)) {

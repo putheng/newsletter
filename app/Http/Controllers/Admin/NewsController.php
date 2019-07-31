@@ -58,9 +58,9 @@ class NewsController extends Controller
 
         $news->save();
 
-        return NewsResource::collection(
-            News::latest()->get()
-        );
+        return response()->json([
+            'statue' => true
+        ], 200);
     }
 
     public function storeImageUpload($uploadFile, $fileName)
